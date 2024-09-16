@@ -1,0 +1,20 @@
+
+#### Hash Calculation Script - README.md:
+```markdown
+# Hash Calculation Script
+
+## Overview
+This script calculates the MD5 hash for APK files in specified folders and saves the results to a CSV file. The script processes folders named `eapks1` to `eapks22`.
+
+### Key Features:
+- Computes the MD5 hash for all `.apk` files in the provided directory.
+- Saves the output (MD5, folder name, and filename) to `md5_hashes.csv`.
+
+### Key Files:
+- **Output File**: `md5_hashes.csv` (stores folder names, filenames, and corresponding MD5 hashes)
+
+### Usage:
+1. Ensure the APK files are stored in the correct base directory: `/mnt/data/Android-Data/APKs/`.
+2. Run the script using:
+   ```bash
+   python calculate_hash.py

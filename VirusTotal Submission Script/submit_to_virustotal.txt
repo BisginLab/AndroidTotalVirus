@@ -1,0 +1,23 @@
+# VirusTotal Submission Script
+
+## Overview
+This script reads MD5 hashes from a CSV file and submits them to the VirusTotal API to fetch analysis reports. The reports are saved in both CSV and JSON formats for further analysis.
+
+### Key Features:
+- Reads MD5 hashes from a CSV (`md5_hashes.csv`).
+- Submits each hash to VirusTotal and fetches the analysis report.
+- Saves the JSON report in a folder structure based on the APK file's original location.
+- Writes summary statistics to a CSV (`virustotal_results.csv`).
+
+### Key Files:
+- **Input File**: `md5_hashes.csv` (contains MD5 hashes and APK filenames)
+- **Output Files**:
+  - `virustotal_results.csv`: Summary statistics of the VirusTotal scan.
+  - JSON reports for each hash stored in `/home/umflint.edu/hrychen/Android-Data/json_reports/`.
+
+### Usage:
+1. Make sure your `md5_hashes.csv` file is populated.
+2. Run the script using:
+   ```bash
+   python submit_to_virustotal_report.py
+
