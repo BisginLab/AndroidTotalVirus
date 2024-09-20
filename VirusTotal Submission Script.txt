@@ -1,0 +1,40 @@
+VirusTotal Submission Script
+
+Overview
+This script reads MD5 hashes from a CSV file and submits them to the VirusTotal API to fetch analysis reports. The reports are saved in both CSV and JSON formats for further analysis.
+
+Key Features:
+Reads MD5 hashes from a CSV (`md5_hashes.csv`).
+The CSV is the one we extracted from the hash calculation script
+Submits each hash to VirusTotal and fetches the analysis report
+The academic premium we get up to 20,000 submissions per day
+Currently using nohup to run the script in the background
+Saves the JSON report in a folder structure based on the APK file's original location.
+Writes summary statistics to a CSV (`virustotal_results.csv`).
+
+Key Files:
+Input File: `md5_hashes.csv` (contains MD5 hashes and APK filenames)
+Output Files:
+‘virustotal_results.csv’: Summary statistics of the VirusTotal scan.
+JSON reports for each hash stored in `/home/umflint.edu/hrychen/Android-Data/json_reports/`
+
+Usage:
+Make sure your `md5_hashes.csv` file is populated.
+Run the script using:   ```bash   python submit_to_virustotal_report.py
+
+
+Hash Calculation Script
+
+Overview
+This script calculates the MD5 hash for APK files in specified folders and saves the results to a CSV file. The script processes folders named `eapks1` to `eapks22`.
+
+Key Features:
+Computes the MD5 hash for all `.apk` files in the provided directory (eapks1 to eapks22)
+Saves the output (MD5, folder name, and filename) to `md5_hashes.csv`.
+
+Key Files:
+Output File: `md5_hashes.csv` (stores folder names, filenames, and corresponding MD5 hashes)
+
+Usage:
+Ensure the APK files are stored in the correct base directory: `/mnt/data/Android-Data/APKs/`.
+Run the script using: ```bash  python calculate_hash.py
